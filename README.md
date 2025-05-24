@@ -6,8 +6,8 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 
 - **Stack Data Structure**: Implemented with array or linked list (see documentation for details).
 - **Two Sorting Algorithms**:
-  - "Slow" Algorithm: [Replace with your chosen algorithm, e.g., Bubble Sort]
-  - "Fast" Algorithm: [Replace with your chosen algorithm, e.g., Merge Sort]
+  - "Slow" Algorithm: Bubble Sort
+  - "Fast" Algorithm: Merge Sort
 - **Two Versions of Graham's Scan**:
   - `graham_scan1.c`: Uses the "slow" sorting algorithm.
   - `graham_scan2.c`: Uses the "fast" sorting algorithm.
@@ -15,7 +15,7 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 - **Large Input Handling**: Supports up to **32,768 points**.
 - **Precision Output**: Coordinates formatted to 6 decimal places.
 
-## 🧠 Concepts Applied
+## Concepts Applied
 
 - Stack Data Structure
 - Polar angle-based sorting
@@ -25,7 +25,7 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 
 ## Requirements
 
-- C Compiler (e.g., `gcc`)
+- GCC
 - Make
 
 ## Build Instructions
@@ -49,4 +49,4 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 
 3.  Clean build artifacts (optional):
 
-        make clean # Removes all .o files and executables
+        make clean # Removes all executables
