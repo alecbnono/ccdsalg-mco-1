@@ -47,6 +47,6 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 
         main2 (fast version, uses e.g., Merge Sort)
 
-Clean build artifacts (optional):
+3.  Clean build artifacts (optional):
 
-    make clean  # Removes all .o files and executables
+        make clean # Removes all .o files and executables
