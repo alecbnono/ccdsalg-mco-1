@@ -25,24 +25,27 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 
 ## Requirements
 
-- GCC
+- C Compiler (e.g., `gcc`)
 - Make
 
 ## Build Instructions
 
-1. Clone the repository:
-   `     git clone https://github.com/alecbnono/ccdsalg-mco-1.git
- cd convex-hull-graham-scan
- `
-   Compile the project:
-   `     make
- `
+1.  Clone the repository:
+    ```
+    git clone https://github.com/alecbnono/ccdsalg-mco-1.git
+    cd convex-hull-graham-scan
+    ```
+2.  Compile the project:
 
-This generates two executables:
+    ```
+    make
+    ```
 
-    main1 (slow version, uses e.g., Bubble Sort)
+    This generates two executables:
 
-    main2 (fast version, uses e.g., Merge Sort)
+        main1 (slow version, uses e.g., Bubble Sort)
+
+        main2 (fast version, uses e.g., Merge Sort)
 
 Clean build artifacts (optional):
 
