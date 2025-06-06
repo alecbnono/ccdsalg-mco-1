@@ -8,3 +8,10 @@ int compare(Point a, Point b) {
     return 0;
 }
 
+void swap(Point *a, Point * b) 
+{
+    Point temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
