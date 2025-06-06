@@ -35,10 +35,11 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
     git clone https://github.com/alecbnono/ccdsalg-mco-1.git
     cd convex-hull-graham-scan
     ```
-2.  Compile the project:
+2.  Compile one or both of fast and slow version:
 
     ```
-    make
+    make main1
+    make main2
     ```
 
     This generates two executables:
