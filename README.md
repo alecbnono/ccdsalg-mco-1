@@ -51,3 +51,26 @@ This project implements the Graham's Scan algorithm to compute the convex hull o
 3.  Clean build artifacts (optional):
 
         make clean # Removes all executables
+
+## Project organization
+
+### / (root)
+
+| Name           | Type        | Function                        |
+| -------------- | ----------- | ------------------------------- |
+| include        | `Directory` | Component Header (.h) files     |
+| inputs         | `Directory` | Input text files                |
+| main           | `Directory` | Main C files for the 2 Programs |
+| outputs        | `Directory` | Output text files               |
+| src            | `Directory` | Component C files of main files |
+| &#46;gitignore | `File`      | Github generated file           |
+| Makefile       | `File`      | Easy and consistent compilation |
+
+### /src
+
+| Name      | Type   | Function                                     |
+| --------- | ------ | -------------------------------------------- |
+| compare.c | `File` | Responsible for comparing points for sorting |
+| qsort.c   | `File` | Quick sort implementation                    |
+| stack.c   | `File` | Stack data structure implementation          |
+| ssort.c   | `File` | Selection sort implementation                |
