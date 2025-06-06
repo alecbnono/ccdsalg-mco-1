@@ -1,13 +1,6 @@
 #include "qsort.h"
 #include "compare.h"
 
-void swap(Point *a, Point * b) 
-{
-    Point temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 int partition(Point arr[], int low, int high) 
 {
     Point pivot = arr[high];
