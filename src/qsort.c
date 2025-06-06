@@ -1,4 +1,5 @@
 #include "qsort.h"
+#include "compare.h"
 
 void swap(Point *a, Point * b) 
 {
@@ -13,7 +14,7 @@ int partition(Point arr[], int low, int high)
     int i = low - 1;
 
     for (int j = low; j < high; j++) {
-        if (compare_points(arr[j], pivot) < 0) {
+        if (compare(arr[j], pivot) < 0) {
             i++;
             swap(&arr[i], &arr[j]);
         }
