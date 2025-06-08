@@ -1,31 +1,45 @@
-#include "qsort.h"
+#include <stdlib.h>
 #include "compare.h"
+#include "qsort.h"
+#include "stack.h"
 
-int partition(Point arr[], int low, int high) 
+int partition(Point A[], int low, int high)
 {
-    Point pivot = arr[high];
-    int i = low - 1;
+        Point pivot = A[high]; // store pivot value at the end
+        int i = low - 1;
 
-    for (int j = low; j < high; j++) {
-        if (compare(arr[j], pivot) < 0) {
-            i++;
-            swap(&arr[i], &arr[j]);
+        // segregates values lower than the pivot
+        // on the left and values higher on the right
+        for (int j = low; j < high ; j++) {
+                if (compare(A[j], pivot) != -1) {
+                        i++;
+                        swap(&A[i], &A[j]);
+                }
         }
-    }
 
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+        // swap pivot stored on the end
+        // to its sorted position
+        swap(&A[i + 1], &A[high]);
+
+        // returns index of sorted pivot
+        return i + 1;
 }
 
-void quickSort(Point arr[], int low, int high) 
-{   
-    int pi;
+void quicksort(Point A[], int low, int high)
+{
+        // sets base case as low >= high
+        if (low < high) {
+                // random pivot (better chances of an overall median)
+                int randomPivotIndex  = (rand() % (high - low + 1)) + low;
+                swap(&A[randomPivotIndex], &A[high]); // move pivot to end
 
-    if (low < high) 
-    {
-     pi = partition(arr, low, high);   
-    }
+                // partition index
+                int pi = partition(A, low, high);
 
-    quickSort(arr, low, pi - 1);
-    quickSort(arr, pi + 1, high);
+                // left of pivot
+                quicksort(A, low, pi - 1);
+
+                // right of pivot
+                quicksort(A, pi + 1, high);
+        }
 }
