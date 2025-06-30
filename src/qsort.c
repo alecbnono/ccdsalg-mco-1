@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include "compare.h"
-#include "qsort.h"
-#include "stack.h"
 
 int partition(Point A[], int low, int high)
 {

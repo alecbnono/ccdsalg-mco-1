@@ -15,3 +15,18 @@ void swap(Point *a, Point *b)
         *a = *b;
         *b = temp;
 }
+
+int isCounterClockwise(Point *a, Point *b, Point *c) {
+
+        double area = (b->x - a->x) * (c->y - a->y) - (b->y - a->y) * (c->x - a->x);
+
+        if (area > 0) {
+                return 1;
+        }
+        else if (area < 0) {
+                return 1;
+        }
+        else {
+                return 0;
+        }
+}

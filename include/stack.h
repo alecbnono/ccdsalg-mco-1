@@ -13,8 +13,8 @@ typedef struct
 } Stack;
 
 void stackCreate(Stack *S);
-void stackPush(Stack *S, Point x);
-void stackPop(Stack *S);
+int stackPush(Stack *S, Point x);
+Point stackPop(Stack *S);
 Point stackTop(Stack *S);
 int stackIsFull(Stack *S);
 int stackIsEmpty(Stack *S);

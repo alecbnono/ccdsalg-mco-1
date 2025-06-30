@@ -5,15 +5,30 @@ void stackCreate(Stack *S)
         S->top = -1;
 }
 
-void stackPush(Stack *S, Point x)
+int stackPush(Stack *S, Point x)
 {
-        S->top += 1;
-        S->data[S->top] = x;
+        if (stackIsFull(S))
+        {
+                S->top += 1;
+                S->data[S->top] = x;
+                return 1;
+        }
+        else
+                return 0;
 }
 
-void stackPop(Stack *S)
+Point stackPop(Stack *S)
 {
-        S->top -= 1;
+        Point temp = S->data[S->top];
+        if (stackIsEmpty(S))
+        {
+                S->top -= 1;
+                return temp;
+        }
+        else
+        {
+                return temp;
+        }
 }
 
 Point stackTop(Stack *S)
