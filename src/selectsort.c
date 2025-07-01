@@ -1,7 +1,7 @@
 #include "selectsort.h"
-#include "compare.h"
+#include "utils.h"
 
-void selectionSort(Point arr[], int n)
+void selectionSort(Point arr[], int n, Point minY)
 {
     int i, j;
     
@@ -11,7 +11,7 @@ void selectionSort(Point arr[], int n)
         
         for(j = i + 1; j < n; j++)
         {
-            if(compare(arr[j], arr[min]) < 0)
+            if(compare(minY, arr[j], arr[min]))
             {
                 min = j;
             }

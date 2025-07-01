@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include "compare.h"
+#include "utils.h"
 
-int partition(Point A[], int low, int high)
+int partition(Point A[], int low, int high, Point minY)
 {
         Point pivot = A[high]; // store pivot value at the end
         int i = low - 1;
@@ -9,7 +9,7 @@ int partition(Point A[], int low, int high)
         // segregates values lower than the pivot
         // on the left and values higher on the right
         for (int j = low; j < high ; j++) {
-                if (compare(A[j], pivot) != -1) {
+                if (compare(minY, A[j], pivot) != -1) {
                         i++;
                         swap(&A[i], &A[j]);
                 }
@@ -23,7 +23,7 @@ int partition(Point A[], int low, int high)
         return i + 1;
 }
 
-void quicksort(Point A[], int low, int high)
+void quicksort(Point A[], int low, int high, Point minY)
 {
         // sets base case as low >= high
         if (low < high) {
@@ -32,7 +32,7 @@ void quicksort(Point A[], int low, int high)
                 swap(&A[randomPivotIndex], &A[high]); // move pivot to end
 
                 // partition index
-                int pi = partition(A, low, high);
+                int pi = partition(A, low, high, minY);
 
                 // left of pivot
                 quicksort(A, low, pi - 1);

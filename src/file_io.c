@@ -2,7 +2,7 @@
 #include <string.h>
 #include "stack.h"
 
-void export(Stack *s) {
+void exportData(Stack *s) {
         FILE* fp = fopen("output.txt", "w");
         int i;
 
@@ -12,7 +12,7 @@ void export(Stack *s) {
                 fprintf(fp, "%.6f %.6f\n", s->data[i].x, s->data[i].y);
 }
 
-void import(Stack *s)
+void importData(Stack *s)
 {
         FILE *fp;
         char fileName[31];
