@@ -4,7 +4,7 @@ void slowGrahamScan(Stack *input, Stack *result)
 {
     int P0 = getMinYIndex(input);
 
-    selectionSort(input, input->top, P0);
+    selectionSort(input->data, input->top+1, P0);
 
     // pushing initial points into result stack
     result->top = -1;
