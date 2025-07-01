@@ -1,5 +1,12 @@
 #include "utils.h"
 
+void swap(Point *a, Point *b);
+int getMinYIndex(Stack *s);
+int isCounterClockwise(Point a, Point b, Point c);
+double distanceSquared(Point a, Point b);
+int directionFromPivot(Point a, Point b);
+int compare(Point a, Point b, Point c);
+
 void swap(Point *a, Point *b)
 {
         Point temp;
@@ -9,18 +16,20 @@ void swap(Point *a, Point *b)
         *b = temp;
 }
 
-Point getMinY(Stack *s)
+int getMinYIndex(Stack *s)
 {
-        Point minY = s->data[0];
+        int lowest = 0;
 
-        for (int i = 0; i <= s->top; i++)
+        for (int i = 1; i <= s->top; i++)
         {
-                if (minY.y > s->data[i].y) {
-                        minY = s->data[i];
+                if (s->data[i].y < s->data[lowest].y ||
+                   (s->data[i].y == s->data[lowest].y && s->data[i].x < s->data[lowest].x)) {
+                    lowest = i;
                 }
         }
 
-        return minY;
+
+        return lowest;
 }
 
 int isCounterClockwise(Point a, Point b, Point c)
