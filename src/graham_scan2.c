@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "../include/utils.h"
 #include "../include/sort.h"
 #include "../include/graham_scan2.h"
