@@ -3,34 +3,25 @@
 #include "../include/stack.h"
 #include "../include/file_io.h"
 
+typedef char String30[31];
 
-void exportData(Stack *s) {
-        FILE* fp = fopen("output.txt", "w");
+void exportData(Stack *s, String30 fileName) {
+        FILE* fp = fopen(fileName, "w");
         int i;
 
-        fprintf(fp, "%d\n", s->top);
+        fprintf(fp, "%d\n", s->top+1);
 
-        for (i = 0; i < s->top; i++)
+        for (i = 0; i <= s->top; i++)
                 fprintf(fp, "%.6f %.6f\n", s->data[i].x, s->data[i].y);
 }
 
-void importData(Stack *s)
+void importData(Stack *s, String30 fileName)
 {
         FILE *fp;
         char fileName[31];
         Point tempPoint;
         int top;
         int i = 0;
-
-        do
-        {
-                printf("Enter filename (including extension): ");
-                scanf("%30s", fileName);
-
-                if (strlen(fileName) >= 30)
-                        printf("Filename is too long, maximum of 30 characters only.\n");
-        }
-        while (strlen(fileName) >= 30);
 
         if ((fp = fopen(fileName, "rt")) != NULL)
         {
