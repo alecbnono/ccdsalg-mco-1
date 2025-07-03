@@ -60,3 +60,6 @@ dkms.conf
 
 # remove text files
 *.txt
+bin/main2
+bin/main1
+bin/main2

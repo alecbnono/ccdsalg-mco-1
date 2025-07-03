@@ -37,7 +37,7 @@ int partition(Point A[], int low, int high, Point minY)
         // segregates values lower than the pivot
         // on the left and values higher on the right
         for (int j = low; j < high ; j++) {
-                if (compare(minY, A[j], pivot) != -1) {
+                if (compare(minY, A[j], pivot)) {
                         i++;
                         swap(&A[i], &A[j]);
                 }
