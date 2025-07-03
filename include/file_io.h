@@ -3,7 +3,9 @@
 #include "stack.h"
 #include <string.h>
 
-void exportData(Stack *s);
-void importData(Stack *s);
+typedef char String30[31];
+
+void exportData(Stack *s, String30 fileName);
+void importData(Stack *s, String30 fileName);
 
 #endif

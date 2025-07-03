@@ -3,8 +3,6 @@
 #include "../include/stack.h"
 #include "../include/file_io.h"
 
-typedef char String30[31];
-
 void exportData(Stack *s, String30 fileName) {
         FILE* fp = fopen(fileName, "w");
         int i;
@@ -13,6 +11,8 @@ void exportData(Stack *s, String30 fileName) {
 
         for (i = 0; i <= s->top; i++)
                 fprintf(fp, "%.6f %.6f\n", s->data[i].x, s->data[i].y);
+
+        fclose(fp);
 }
 
 void importData(Stack *s, String30 fileName)
