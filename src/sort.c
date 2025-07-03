@@ -2,26 +2,30 @@
 
 #include "../include/stack.h"
 #include "../include/sort.h"
+#include "../include/utils.h"
 
-
-void selectionSort(Point arr[], int n, Point minY)
+void selectionSort(Point arr[], int n, Point pivot) 
 {
     int i, j;
-    
-    for (i = 0; i < n - 1; i++)
+
+    // Iterate through the array to find the minimum element
+    for (i = 0; i < n - 1; i++) 
     {
-        int min = i;
-        
-        for(j = i + 1; j < n; j++)
-        {
-            if(compare(minY, arr[j], arr[min]))
+        int min_idx = i; // Assume the current element is the minimum
+
+        // Find the minimum element (based on polar angle) in the remaining unsorted array
+        for (j = i + 1; j < n; j++) {
+            if (compare(pivot, arr[j], arr[min_idx])) 
             {
-                min = j;
+                min_idx = j; // Update index of the minimum element found so far
             }
         }
-        
-        if (min != i)
-            swap(&arr[i], &arr[min]);
+
+        // If the minimum element found is not at the current position 'i', swap them
+        if (min_idx != i) 
+        {
+            swap(&arr[i], &arr[min_idx]);
+        }
     }
 }
 

@@ -7,7 +7,7 @@ void stackCreate(Stack *S)
 
 int stackPush(Stack *S, Point x)
 {
-        if (stackIsFull(S))
+        if (!stackIsFull(S))
         {
                 S->top += 1;
                 S->data[S->top] = x;

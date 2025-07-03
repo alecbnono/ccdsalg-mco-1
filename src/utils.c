@@ -61,6 +61,7 @@ int directionFromPivot(Point a, Point b)
 
 int compare(Point a, Point b, Point c)
 {
+        /*
         int orientation = isCounterClockwise(a, b, c);
 
         // swap if clockwise
@@ -95,4 +96,16 @@ int compare(Point a, Point b, Point c)
         // if counter clockwise no swap
         else
                 return 0;
+                */
+
+        int orientation = isCounterClockwise(a, b, c);
+
+        if (orientation > 0) {
+                return 1;
+        }
+        if (orientation < 0) {
+                return 0;
+        }
+
+        return distanceSquared(a, b) < distanceSquared(a, c);
 }
