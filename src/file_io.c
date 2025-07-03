@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "stack.h"
+#include "../include/stack.h"
+#include "../include/file_io.h"
+
 
 void exportData(Stack *s) {
         FILE* fp = fopen("output.txt", "w");
@@ -50,3 +52,4 @@ void importData(Stack *s)
         else
                 printf("Error reading to file.\n");
 }
+

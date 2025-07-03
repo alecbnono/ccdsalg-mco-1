@@ -1,5 +1,29 @@
 #include <stdlib.h>
-#include "utils.h"
+
+#include "../include/stack.h"
+#include "../include/sort.h"
+
+
+void selectionSort(Point arr[], int n, Point minY)
+{
+    int i, j;
+    
+    for (i = 0; i < n - 1; i++)
+    {
+        int min = i;
+        
+        for(j = i + 1; j < n; j++)
+        {
+            if(compare(minY, arr[j], arr[min]))
+            {
+                min = j;
+            }
+        }
+        
+        if (min != i)
+            swap(&arr[i], &arr[min]);
+    }
+}
 
 int partition(Point A[], int low, int high, Point minY)
 {
@@ -35,9 +59,9 @@ void quicksort(Point A[], int low, int high, Point minY)
                 int pi = partition(A, low, high, minY);
 
                 // left of pivot
-                quicksort(A, low, pi - 1);
+                quicksort(A, low, pi - 1, minY);
 
                 // right of pivot
-                quicksort(A, pi + 1, high);
+                quicksort(A, pi + 1, high, minY);
         }
 }

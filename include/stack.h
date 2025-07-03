@@ -1,3 +1,5 @@
+#ifndef STACK_H
+#define STACK_H
 #define MAX_ELEMENTS 32768
 
 typedef struct 
@@ -19,3 +21,5 @@ Point stackTop(Stack *S);
 int stackIsFull(Stack *S);
 int stackIsEmpty(Stack *S);
 Point stackNextToTop(Stack *S);
+
+#endif

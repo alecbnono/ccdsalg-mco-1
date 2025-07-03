@@ -1,10 +1,12 @@
-#include "utils.h"
+#include "../include/utils.h"
+#include "../include/sort.h"
+#include "../include/graham_scan2.h"
 
 void fastGrahamScan(Stack *input, Stack *result)
 {
-    int P0 = getMinYIndex(input);
+    Point pivot = input->data[getMinYIndex(input)];
 
-    quicksort(input->data, 1, input->top, P0);
+    quicksort(input->data, 0, input->top, pivot);
 
     // pushing initial points into result stack
     result->top = -1;

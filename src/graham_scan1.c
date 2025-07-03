@@ -1,10 +1,12 @@
-#include "utils.h"
+#include "../include/utils.h"
+#include "../include/sort.h"
+#include "../include/graham_scan1.h"
 
 void slowGrahamScan(Stack *input, Stack *result)
 {
-    int P0 = getMinYIndex(input);
+    Point pivot = input->data[getMinYIndex(input)];
 
-    selectionSort(input->data, input->top+1, P0);
+    selectionSort(input->data, input->top+1, pivot);
 
     // pushing initial points into result stack
     result->top = -1;

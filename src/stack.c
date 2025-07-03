@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../include/stack.h"
 
 void stackCreate(Stack *S)
 {
