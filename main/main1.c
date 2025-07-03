@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "../include/stack.h"
-#include "../include/utils.h"
 #include "../include/file_io.h"
 #include "../include/graham_scan1.h"
 
@@ -31,4 +29,6 @@ int main() {
     slowGrahamScan(&pointStack, &hullStack);
 
     exportData(&hullStack, outputFile);
+
+    return 0;
 }

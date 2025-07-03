@@ -53,3 +53,10 @@ dkms.conf
 
 # lsp fix
 .clangd
+
+# removes vscode files
+.vscode/
+.DS_Store
+
+# remove text files
+*.txt
