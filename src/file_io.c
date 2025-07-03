@@ -18,7 +18,6 @@ void exportData(Stack *s, String30 fileName) {
 void importData(Stack *s, String30 fileName)
 {
         FILE *fp;
-        char fileName[31];
         Point tempPoint;
         int top;
         int i = 0;
