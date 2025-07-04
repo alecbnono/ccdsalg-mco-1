@@ -12,7 +12,7 @@ void exportData(Stack *s, String30 fileName)
 
         for (i = 0; i <= s->top; i++)
                 fprintf(fp, "%.6f %.6f\n", s->data[i].x, s->data[i].y);
-                
+
         fclose(fp);
 }
 
@@ -32,7 +32,6 @@ void importData(Stack *s, String30 fileName)
                        fscanf(fp, "%lf %lf", &tempPoint.x, &tempPoint.y);
 
                        s->data[i] = tempPoint;
-                       printf("Reading: %.2f %.2f\n", s->data[i].x, s->data[i].y);
                        i++;
                 }
 

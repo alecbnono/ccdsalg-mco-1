@@ -1,10 +1,17 @@
 #include <stdio.h>
+#include <time.h>    // this is needed for calling the clock()
 #include "../include/utils.h"
 #include "../include/sort.h"
 #include "../include/graham_scan1.h"
 
 void slowGrahamScan(Stack *input, Stack *result)
 {
+
+        clock_t start;
+        clock_t end;
+
+        start = clock();
+
     int numPoints = input->top + 1;
     int pivotIndex = getMinYIndex(input);
     swap(&input->data[0], &input->data[pivotIndex]);
@@ -37,9 +44,8 @@ void slowGrahamScan(Stack *input, Stack *result)
         result->data[++result->top] = input->data[i];
     }
 
-    // Debug: Print final hull
-    printf("\n== Convex Hull Result ==\n");
-    for (int i = 0; i <= result->top; i++) {
-        printf("%.6f %.6f\n", result->data[i].x, result->data[i].y);
-    }
+    
+        end = clock();
+
+    printf("Input Size: %-6d\nTime Elapsed: %-15lf\n", input->top + 1, (double)(end - start));
 }
