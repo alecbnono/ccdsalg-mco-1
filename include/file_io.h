@@ -3,9 +3,9 @@
 #include "stack.h"
 #include <string.h>
 
-typedef char String30[31];
+typedef char String100[101];
 
-void exportData(Stack *s, String30 fileName);
-void importData(Stack *s, String30 fileName);
+void exportData(Stack *s, String100 fileName);
+void importData(Stack *s, String100 fileName);
 
 #endif

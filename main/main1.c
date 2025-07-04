@@ -4,7 +4,7 @@
 #include "../include/graham_scan1.h"
 
 int main() {
-    String30 inputFile, outputFile;
+    String100 inputFile, outputFile;
     Stack pointStack;
     Stack hullStack;
     pointStack.top = -1;

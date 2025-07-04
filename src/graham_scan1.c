@@ -44,7 +44,6 @@ void slowGrahamScan(Stack *input, Stack *result)
         result->data[++result->top] = input->data[i];
     }
 
-    
         end = clock();
 
     printf("Input Size: %-6d\nTime Elapsed: %-15lf\n", input->top + 1, (double)(end - start));
