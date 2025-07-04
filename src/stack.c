@@ -20,7 +20,7 @@ int stackPush(Stack *S, Point x)
 Point stackPop(Stack *S)
 {
         Point temp = S->data[S->top];
-        if (stackIsEmpty(S))
+        if (!stackIsEmpty(S))
         {
                 S->top -= 1;
                 return temp;
