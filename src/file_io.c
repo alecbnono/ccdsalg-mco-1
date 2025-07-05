@@ -14,7 +14,7 @@ void exportData(Stack *s, String100 fileName)
 
         for (i = 0; i <= s->top; i++)
                 fprintf(fp, "%.6f %.6f\n", s->data[i].x, s->data[i].y);
-        
+ 
         printf("\nSuccessfully exported %s\n", fileName);
 
         fclose(fp);
